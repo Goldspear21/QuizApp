@@ -89,17 +89,18 @@ This is an interactive quiz app inspired by *Five Nights at Freddy’s*, featuri
 ---
 
 ## 📁 Project Structure
-├── .vscode           # VSCode config files
-├── audio             # Background music files
-├── bin/Assignment2Quiz  # Compiled .class files
-├── gifs              # Animated GIFs (pause menu, etc.)
-├── images            # UI images (pause icon, backgrounds, etc.)
-├── lib               # JavaFX JAR libraries
-├── src/Assignment2Quiz  # Main package and quiz logic
-├── src/App.java      # Entry point of the application
-├── txt               # Quiz questions and leaderboard text files
-├── videos            # Optional video files
-└── README.md         # This file
+
+-├── .vscode           # VSCode config files
+-├── audio             # Background music files
+-├── bin/Assignment2Quiz  # Compiled .class files
+-├── gifs              # Animated GIFs (pause menu, etc.)
+-├── images            # UI images (pause icon, backgrounds, etc.)
+-├── lib               # JavaFX JAR libraries
+-├── src/Assignment2Quiz  # Main package and quiz logic
+-├── src/App.java      # Entry point of the application
+-├── txt               # Quiz questions and leaderboard text files
+-├── videos            # Optional video files
+-└── README.md         # This file
 
 
 ✍️ Customization Tips
