@@ -90,38 +90,37 @@ This is an interactive quiz app inspired by *Five Nights at Freddy’s*, featuri
 
 ## 📁 Project Structure
 
--├── .vscode           # VSCode config files
--├── audio             # Background music files
--├── bin/Assignment2Quiz  # Compiled .class files
--├── gifs              # Animated GIFs (pause menu, etc.)
--├── images            # UI images (pause icon, backgrounds, etc.)
--├── lib               # JavaFX JAR libraries
--├── src/Assignment2Quiz  # Main package and quiz logic
--├── src/App.java      # Entry point of the application
--├── txt               # Quiz questions and leaderboard text files
--├── videos            # Optional video files
--└── README.md         # This file
+📁 .vscode # VSCode config files (launch.json, tasks.json)
+📁 audio # Background music files
+📁 bin/Assignment2Quiz # Compiled .class files
+📁 gifs # Animated GIFs (pause menu, etc.)
+📁 images # UI images (icons, backgrounds, etc.)
+📁 lib # JavaFX JAR libraries
+📁 src/Assignment2Quiz # Main JavaFX application code
+📄 src/App.java # Entry point for the application
+📁 txt # Quiz questions and leaderboard text files
+📁 videos # Optional video content
+📄 README.md # This file
 
+---
 
-✍️ Customization Tips
+## ✍️ Customization Tips
 
-Add your own questions to the txt files, make sure you follow the format of the quiz
+- Add your own questions to the `txt/` files (follow the existing question format)  
+- Change background music by replacing the `.m4a` file in `audio/`  
+- Update GIFs or images by modifying content in the `gifs/` and `images/` folders  
+- Customize fonts, colors, and themes in the `src/Assignment2Quiz` directory  
 
-Change the background music by replacing the .m4a file in audio/
+---
 
-Update GIFs or images in the respective folders for a different theme.
+## 📬 Feedback
 
+Have suggestions, or want to fork this for another theme? Go ahead and remix it! Freddy’s always watching 👀  
+**Send us feedback or report bugs via this form:**  
+[📩 Google Form](https://docs.google.com/forms/d/e/1FAIpQLScuwZ5qb5oEPw5Cla8N2WJ3LoLqTyW3o6K9kJdIoWH_GzzztA/viewform)
 
+---
 
-📬 Feedback
-
-Have suggestions, or want to fork this for another theme? Go ahead and remix it! Freddy’s always watching 👀Send us feedback on this Google form below: (especially if you want to report any bugs)
-
-https://docs.google.com/forms/d/e/1FAIpQLScuwZ5qb5oEPw5Cla8N2WJ3LoLqTyW3o6K9kJdIoWH_GzzztA/viewform
-
-
-
-
-Made with 💀, 🎃, and JavaFX.
+## 🧪 Made with 💀, 🎃, and JavaFX.
 
 
