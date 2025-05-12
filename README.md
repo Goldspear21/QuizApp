@@ -86,23 +86,22 @@ This is an interactive quiz app inspired by *Five Nights at Freddy’s*, featuri
 4. Set up `launch.json` and `tasks.json` inside `.vscode` folder to reference `lib`  
 5. Press the green **Run** button or `Ctrl + F5` to launch  
 
----
-
 ## 📁 Project Structure
 
-📁 .vscode # VSCode config files (launch.json, tasks.json)
-📁 audio # Background music files
-📁 bin/Assignment2Quiz # Compiled .class files
-📁 gifs # Animated GIFs (pause menu, etc.)
-📁 images # UI images (icons, backgrounds, etc.)
-📁 lib # JavaFX JAR libraries
-📁 src/Assignment2Quiz # Main JavaFX application code
-📄 src/App.java # Entry point for the application
-📁 txt # Quiz questions and leaderboard text files
-📁 videos # Optional video content
-📄 README.md # This file
+```
+📁 .vscode              # VSCode config files (launch.json, tasks.json)
+📁 audio                # Background music files
+📁 bin/Assignment2Quiz  # Compiled .class files
+📁 gifs                 # Animated GIFs (pause menu, etc.)
+📁 images               # UI images (icons, backgrounds, etc.)
+📁 lib                  # JavaFX JAR libraries
+📁 src/Assignment2Quiz  # Main JavaFX application code
+📄 src/App.java         # Entry point for the application
+📁 txt                  # Quiz questions and leaderboard text files
+📁 videos               # Optional video content
+📄 README.md            # This file
+```
 
----
 
 ## ✍️ Customization Tips
 
