@@ -23,7 +23,21 @@ import java.util.concurrent.atomic.AtomicBoolean; // To safely stop the server t
 public class LeaderboardServerGUI extends Application {
 
     private static final int PORT = 12345; // Choose a port number
-    private static final String LEADERBOARD_FILE = "..//server_app//src//main//java//bhargav//server//resources//leaderboard.txt"; 
+    private static final String LEADERBOARD_FILE;
+
+    static {
+        String userHome = System.getProperty("user.home");
+        // It's good practice to put application data in a subfolder.
+        // This will create a folder like C:\Users\<username>\QuizAppServerData
+        // (Windows)
+        // or /home/<username>/QuizAppServerData (Linux/macOS)
+        String appDataDir = userHome + File.separator + "QuizAppServerData";
+        File directory = new File(appDataDir);
+        if (!directory.exists()) {
+            directory.mkdirs(); // Create the directory if it doesn't exist
+        }
+        LEADERBOARD_FILE = appDataDir + File.separator + "leaderboard.txt";
+    }
 
     private TextArea serverLogArea;
     private ListView<String> connectedClientsList;

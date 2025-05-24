@@ -63,6 +63,7 @@ public class QuizGUI extends Application {
     private boolean onlineMode = false;
     private ProgressIndicator loadingIndicator;
     private Label serverResponseLabel;
+    private static final String LEADERBOARD_FILE_NAME = "leaderboard.txt";
 
     /**
      * Starts the quiz application by displaying the username input screen.
@@ -120,7 +121,7 @@ public class QuizGUI extends Application {
         // Load your custom X icon
         ImageView clearIcon = new ImageView();
         try {
-            Image iconImg = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//xiconcircle.png");
+            Image iconImg = new Image(getClass().getResourceAsStream("/images/xiconcircle.png"));
             clearIcon.setImage(iconImg);
             clearIcon.setFitWidth(20);
             clearIcon.setFitHeight(20);
@@ -234,7 +235,7 @@ public class QuizGUI extends Application {
         playOnlineButton.setOnAction(_ -> showServerConnectDialog()); // Call a new method for the dialog
 
         try {
-            stage.getIcons().add(new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//icon.jpeg"));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("/images/icon.jpeg")));
         } catch (Exception e) {
             System.out.println("Error loading icon: " + e.getMessage());
         }
@@ -244,7 +245,8 @@ public class QuizGUI extends Application {
 
         ImageView welcomeImage = new ImageView(); // Load and display a welcome image
         try {
-            Image welcome = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//welcome.jpg"); // path to it
+            Image welcome = new Image(getClass().getResourceAsStream("/images/welcome.jpg")); // path
+                                                                                                                // to it
             welcomeImage.setImage(welcome);
             welcomeImage.setFitWidth(300); // size adjuster
             welcomeImage.setPreserveRatio(true);
@@ -255,7 +257,8 @@ public class QuizGUI extends Application {
         Image alwaysComeBackImage = null; // Load the "I always come back" image
 
         try {
-            alwaysComeBackImage = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//always come back.png");
+            alwaysComeBackImage = new Image(
+                    getClass().getResourceAsStream("/images/always come back.png"));
         } catch (Exception e) {
             System.out.println("Error loading 'I always come back' image: " + e.getMessage());
         }
@@ -285,7 +288,7 @@ public class QuizGUI extends Application {
         // Load the background GIF
         ImageView backgroundGIF = new ImageView();
         try {
-            Image bgGif = new Image("file:..//quiz_app//src//main//java//bhargav//resources//gifs//fnafsl.gif");
+            Image bgGif = new Image(getClass().getResourceAsStream("/gifs/fnafsl.gif"));
             backgroundGIF.setImage(bgGif);
             backgroundGIF.setFitWidth(1920); // Adjust if needed
             backgroundGIF.setPreserveRatio(true);
@@ -349,7 +352,8 @@ public class QuizGUI extends Application {
         dialogStage.setTitle("Connect to Leaderboard Server");
         // Set icon for the dialog stage
         try {
-            dialogStage.getIcons().add(new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//icon.jpeg"));
+            dialogStage.getIcons()
+                    .add(new Image(getClass().getResourceAsStream("/images/icon.jpeg")));
         } catch (Exception e) {
             System.out.println("Error loading icon for dialog stage: " + e.getMessage());
         }
@@ -404,7 +408,8 @@ public class QuizGUI extends Application {
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(20));
         layout.setAlignment(Pos.CENTER);
-        layout.getChildren().addAll(ipLabel, ipField, portLabel, portField, statusLabel, connectButton); // Added statusLabel
+        layout.getChildren().addAll(ipLabel, ipField, portLabel, portField, statusLabel, connectButton); // Added
+                                                                                                         // statusLabel
         layout.setStyle("-fx-background-color: lightgrey;"); // Simple background for dialog
 
         Scene dialogScene = new Scene(layout);
@@ -488,15 +493,21 @@ public class QuizGUI extends Application {
     private void startQuizFlow() {
         try {
             // Load the music (same as before)
-            String musicPath = new File("..//quiz_app//src//main//java//bhargav//resources//audio//FNAF Security Breach OST Daycare Theme.m4a")
-                    .toURI().toString();
+            String musicPath = getClass()
+                    .getResource("/audio/FNAF Security Breach OST Daycare Theme.m4a")
+                    .toExternalForm();
             Media media = new Media(musicPath);
             backgroundMusic = new MediaPlayer(media);
             backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE); // Loop the music
             backgroundMusic.play();
 
-            // Load and select questions (same as before)
-            quizQuestions.load("..//quiz_app//src//main//java//bhargav//resources//txt//questionsBase.txt");
+            try {
+                quizQuestions.load(getClass().getResourceAsStream("/txt/questionsBase.txt"));
+            } catch (IOException e) {
+                System.err.println("Failed to load quiz questions: " + e.getMessage());
+                // Handle the error appropriately, e.g., show an alert to the user
+            }
+
             quizQuestions.select(10);
             List<Question<?>> questionsList = quizQuestions.getSelectedQuestions();
             selectedQuestions = questionsList.toArray(new Question<?>[0]);
@@ -582,7 +593,7 @@ public class QuizGUI extends Application {
 
         ImageView quizBackground = new ImageView();
         try {
-            Image bgImage = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//quizbackground.jpg");
+            Image bgImage = new Image(getClass().getResourceAsStream("/images/quizbackground.jpg"));
             quizBackground.setImage(bgImage);
             quizBackground.setFitWidth(1920); // adjust to your window size
             quizBackground.setPreserveRatio(true);
@@ -627,9 +638,14 @@ public class QuizGUI extends Application {
         quizWrapper.setStyle("-fx-background-color: transparent;");
 
         // 🟢 Pause icon setup
-        ImageView pauseIcon = new ImageView(new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//pause-icon.png"));
-        pauseIcon.setFitWidth(50);
-        pauseIcon.setFitHeight(50);
+        ImageView pauseIcon = new ImageView(); // Keep this line as is
+        try {
+            pauseIcon.setImage(new Image(getClass().getResourceAsStream("/images/pause-icon.png")));
+            pauseIcon.setFitWidth(50);
+            pauseIcon.setFitHeight(50);
+        } catch (Exception e) {
+            System.out.println("Error loading pause icon: " + e.getMessage());
+        }
 
         Button pauseButton = new Button();
         pauseButton.setGraphic(pauseIcon);
@@ -728,7 +744,8 @@ public class QuizGUI extends Application {
 
         // Use GIF as background
         pauseMenu.setStyle(
-                "-fx-background-image: url('file:..//quiz_app//src//main//java//bhargav//resources//gifs//pause.gif');" +
+                "-fx-background-image: url('"
+                        + getClass().getResource("/gifs/pause.gif").toExternalForm() + "');" +
                         "-fx-background-size: cover;" +
                         "-fx-background-position: center center;" +
                         "-fx-background-repeat: no-repeat;" +
@@ -1033,7 +1050,7 @@ public class QuizGUI extends Application {
      * - Starts the timer and displays the first question.
      */
 
-     private void restartQuiz() {
+    private void restartQuiz() {
         if (timeline != null) {
             timeline.stop();
         }
@@ -1045,8 +1062,8 @@ public class QuizGUI extends Application {
             backgroundMusic = null;
         }
 
-        String musicPath = new File("..//quiz_app//src//main//java//bhargav//resources//audio//FNAF Security Breach OST Daycare Theme.m4a").toURI()
-                .toString();
+        String musicPath = getClass().getResource("/audio/FNAF Security Breach OST Daycare Theme.m4a")
+                .toExternalForm();
         Media media = new Media(musicPath);
         backgroundMusic = new MediaPlayer(media);
         backgroundMusic.setCycleCount(MediaPlayer.INDEFINITE);
@@ -1099,7 +1116,7 @@ public class QuizGUI extends Application {
         // Background Image Setup (same as before)
         ImageView backgroundImage = new ImageView();
         try {
-            Image bg = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//game_over.png");
+            Image bg = new Image(getClass().getResourceAsStream("/images/game_over.png"));
             backgroundImage.setImage(bg);
             backgroundImage.setFitWidth(primaryStage.getWidth());
             backgroundImage.setFitHeight(primaryStage.getHeight());
@@ -1270,12 +1287,27 @@ public class QuizGUI extends Application {
 
             // Load leaderboard (local file)
             List<String> leaderboard = new ArrayList<>();
-            try (Scanner scanner = new Scanner(new File("..//quiz_app//src//main//java//bhargav//resources//txt//leaderboard.txt"))) {
-                while (scanner.hasNextLine()) {
-                    leaderboard.add(scanner.nextLine());
+            String userHome = System.getProperty("user.home");
+            java.io.File leaderboardFile = new java.io.File(userHome, LEADERBOARD_FILE_NAME);
+
+            // 3. Read from the file using the new File object
+            try {
+                // Check if the file exists before trying to read from it
+                if (leaderboardFile.exists()) {
+                    try (Scanner scanner = new Scanner(leaderboardFile)) { // Use the File object directly
+                        while (scanner.hasNextLine()) {
+                            leaderboard.add(scanner.nextLine());
+                        }
+                    }
+                } else {
+                    // If the file doesn't exist yet, the leaderboard will simply be empty.
+                    System.out.println("Local leaderboard file not found at: " + leaderboardFile.getAbsolutePath()
+                            + ". Starting with empty leaderboard.");
                 }
-            } catch (IOException e) {
-                System.out.println("Error reading local leaderboard.");
+            } catch (IOException e) { // Catch IOException for file reading errors
+                System.err.println("Error reading local leaderboard file: " + e.getMessage()); // Use System.err for
+                                                                                               // errors
+                // Optional: Consider adding an alert or user feedback here
             }
 
             // Create the leaderboard pane (this already has its own background and border)
@@ -1336,7 +1368,7 @@ public class QuizGUI extends Application {
             // THE END image setup (same as before)
             ImageView endImageView = new ImageView();
             try {
-                Image endImage = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//the end.png");
+                Image endImage = new Image(getClass().getResourceAsStream("/images/end.png"));
                 endImageView.setImage(endImage);
                 endImageView.setFitWidth(200);
                 endImageView.setPreserveRatio(true);
@@ -1423,16 +1455,29 @@ public class QuizGUI extends Application {
     private void displayFullLeaderboard(Stage leaderboardStage) {
         // Load leaderboard data (keep existing logic)
         List<String> leaderboard = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("..//quiz_app//src//main//java//bhargav//resources//txt//leaderboard.txt"))) {
-            while (scanner.hasNextLine()) {
-                leaderboard.add(scanner.nextLine());
+        String userHome = System.getProperty("user.home");
+        java.io.File leaderboardFile = new java.io.File(userHome, LEADERBOARD_FILE_NAME);
+
+        // 3. Read from the file using the new File object
+        try {
+            // Check if the file exists before trying to read from it
+            if (leaderboardFile.exists()) {
+                try (Scanner scanner = new Scanner(leaderboardFile)) { // Use the File object directly
+                    while (scanner.hasNextLine()) {
+                        leaderboard.add(scanner.nextLine());
+                    }
+                }
+            } else {
+                // If the file doesn't exist yet (e.g., first run before any scores are saved),
+                // the leaderboard will simply be empty. No need for an error message here.
+                System.out.println("Leaderboard file not found at: " + leaderboardFile.getAbsolutePath()
+                        + ". Displaying empty leaderboard.");
             }
-        } catch (IOException e) {
-            System.out.println("Error reading leaderboard.");
-            // Optional: Show an error alert to the user
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR, "Could not load leaderboard file.");
+        } catch (IOException e) { // Catch IOException for file reading errors
+            System.err.println("Error reading leaderboard file: " + e.getMessage());
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR, "Could not load leaderboard file: " + e.getMessage());
             errorAlert.showAndWait();
-            return;
+            return; // Exit if the leaderboard can't be loaded
         }
 
         // --- Thematic Layout ---
@@ -1442,7 +1487,7 @@ public class QuizGUI extends Application {
         ImageView fullLeaderboardBg = new ImageView();
         try {
             // Example: using a static or glitch effect image
-            Image bgImg = new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//static_background.png");
+            Image bgImg = new Image(getClass().getResourceAsStream("/images/game_over.png"));
             fullLeaderboardBg.setImage(bgImg);
             fullLeaderboardBg.setFitWidth(primaryStage.getWidth()); // Cover full width of primary stage (or current
                                                                     // maximized stage)
@@ -1565,7 +1610,8 @@ public class QuizGUI extends Application {
 
         // Try setting the icon for the leaderboard window too
         try {
-            leaderboardStage.getIcons().add(new Image("file:..//quiz_app//src//main//java//bhargav//resources//images//icon.jpeg"));
+            leaderboardStage.getIcons()
+                    .add(new Image(getClass().getResourceAsStream("/images/icon.jpeg")));
         } catch (Exception e) {
             System.out.println("Error loading icon for leaderboard stage: " + e.getMessage());
         }
@@ -1812,13 +1858,33 @@ public class QuizGUI extends Application {
                 + "s";
 
         List<String> leaderboard = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File("..//quiz_app//src//main//java//bhargav//resources//txt//leaderboard.txt"))) {
-            while (scanner.hasNextLine()) {
-                leaderboard.add(scanner.nextLine());
+
+        // 2. Construct the platform-independent path to the leaderboard file
+        String userHome = System.getProperty("user.home");
+        java.io.File leaderboardFile = new java.io.File(userHome, LEADERBOARD_FILE_NAME);
+
+        // 3. Read from the file using the new File object
+        try {
+            // Check if the file exists before trying to read from it
+            if (leaderboardFile.exists()) {
+                try (Scanner scanner = new Scanner(leaderboardFile)) { // Use the File object directly
+                    while (scanner.hasNextLine()) {
+                        leaderboard.add(scanner.nextLine());
+                    }
+                }
+            } else {
+                // If the file doesn't exist, it's the first run or it was deleted.
+                // FileWriter will create it when we write to it later.
+                System.out.println("Leaderboard file not found at: " + leaderboardFile.getAbsolutePath()
+                        + ". A new one will be created.");
             }
-        } catch (IOException e) {
-            System.out.println("Error reading leaderboard.");
+        } catch (IOException e) { // Catch IOException for file reading errors
+            System.err.println("Error reading leaderboard file: " + e.getMessage());
+            // Consider showing an alert to the user here if this error is critical for
+            // them.
         }
+
+        // --- END CHANGES FOR FILE PATH AND EDITABILITY ---
 
         leaderboard.removeIf(entry -> {
             String entryName = entry.split("-")[0].trim().toLowerCase();
@@ -1840,13 +1906,21 @@ public class QuizGUI extends Application {
             return Integer.compare(timeA, timeB); // Faster time wins tie
         });
 
-        try (FileWriter writer = new FileWriter("..//quiz_app//src//main//java//bhargav//resources//txt//leaderboard.txt")) {
+        // --- START CHANGES FOR FILE PATH AND EDITABILITY (WRITING) ---
+
+        // 4. Write to the file using the new File object
+        try (FileWriter writer = new FileWriter(leaderboardFile)) { // No 'true' needed here if you overwrite the file
+                                                                    // completely each time
             for (String entry : leaderboard) {
                 writer.write(entry + "\n");
             }
         } catch (IOException e) {
-            System.out.println("Error saving to leaderboard.");
+            System.err.println("Error saving to leaderboard file: " + e.getMessage()); // Use System.err for errors
+            // Consider showing an alert to the user here that their score could not be
+            // saved.
         }
+
+        // --- END CHANGES FOR FILE PATH AND EDITABILITY (WRITING) ---
 
         System.out.println("Looking for matches to: " + username);
         for (String entry : leaderboard) {

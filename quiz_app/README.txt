@@ -52,120 +52,125 @@
                
 🎮 FNaF-Themed JavaFX Quiz App
 
-Welcome to the FNaF Quiz App, an interactive, animated quiz application inspired by Five Nights at Freddy's. Built with JavaFX, this project includes rich UI elements, music, GIFs, and a themed pause menu — all designed to create a polished, spooky quiz experience!
-
-
-
-
-🚀 Getting Started:
-
--> Open the project in Visual Studio Code via File > Open Folder... — this avoids duplicate JavaFX JAR issues.
-
--> Navigate to the src folder.
-
--> 🖥️ Server
-    1. Open the `LeaderboardServerGUI.java`.
-    2. Run it to start the leaderboard server on port `12345`.
-    3. It displays a GUI to monitor:
-        - Server status
-        - Connected clients
-        - Leaderboard entries
-
--> 🎯 Client (Quiz App)
-  1. Run `QuizGUI.java`.
-  2. Enter your username and choose between:
-      - `Start Quiz (Offline)` — plays locally and stores scores in a text file.
-      - `Play Online` — connects to the server and submits scores in real-time.
+Welcome to the FNaF Quiz App, an interactive, animated quiz application inspired by Five Nights at Freddy's. Built with JavaFX, this project features a rich UI, music, GIFs, and a themed pause menu for a polished, spooky quiz experience!
 
 ---
 
--> 🌐 Online Mode Details
+## 🚀 Getting Started
 
-        When in online mode:
-            - The app connects to the server on port `12345`.
-            - The app connects to the server and sends a `CONNECT` command.
-            - Upon quiz completion, the app submits score, time, and correct answers to the server.
-            - The server processes the data, ranks the user, and returns top leaderboard entries.
+### Prerequisites
 
+- **Java 21** (or higher, e.g., OpenJDK 23)
+- **JavaFX 21 SDK** (JARs placed in the `lib/` directory)
+- **Visual Studio Code** with [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 
--> Press the Run button or use Ctrl + F5 to launch the quiz.
+### Project Structure
 
-Note: Ensure you have Java 21 and JavaFX 21 properly set up. Place all JavaFX JARs in the lib directory and reference them in your launch.json and tasks.json.
-
-## 🚀 How to Run
-
-
-
-
-
+```
 📁 Project Structure:
-├── .vscode           # VSCode config files
-├── audio             # Background music files
-├── bin/Assignment2Quiz  # Compiled .class files
-├── gifs              # Animated GIFs (pause menu, etc.)
-├── images            # UI images (pause icon, backgrounds, etc.)
-├── lib               # JavaFX JAR libraries
-├── src/Assignment2Quiz  # Main package and quiz logic
-├── src/App.java      # Entry point of the application
-├── txt               # Quiz questions and leaderboard text files
-├── videos            # Optional video files
-└── README.md         # This file
+├── .vscode/                # VSCode config files
+├── lib/                    # JavaFX JAR libraries
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── bhargav/
+│   │   │       ├── App.java       # Entry point
+│   │   │       ├── client/        # Client networking code
+│   │   │       └── quiz/          # Main quiz logic and GUI
+│   │   └── resources/
+│   │       ├── audio/             # Background music files
+│   │       ├── gifs/              # Animated GIFs
+│   │       ├── images/            # UI images
+│   │       ├── txt/               # Quiz questions and leaderboard text files
+│   │       └── videos/            # Optional video files
+│   └── test/
+│       └── java/
+│           └── bhargav/
+│               └── TestQuiz.java  # Unit tests
+├── target/
+│   └── quiz_app-1.0-SNAPSHOT.jar  # Built JAR (if using Maven)
+├── run_app.bat                    # Windows batch file to run the app
+├── pom.xml                        # Maven build file
+├── UML.png                        # UML diagram
+└── README.txt                     # This file
+```
 
+---
 
+## 🏃 How to Run
 
+You can run the application in two ways:
 
+### 1. Using Visual Studio Code
 
-💡 Features
+1. Open the project folder in VS Code (`File > Open Folder...`).
+2. Ensure your JavaFX JARs are in the `lib/` directory.
+3. Open `src/main/java/bhargav/App.java`.
+4. Right-click `App.java` and select **Run Java** (or use the Run button / `Ctrl+F5`).
 
--> 🧠 10-question quiz with randomized selection
+### 2. Using the Provided Batch File (Windows)
 
--> ⏱️ Countdown timer with animated progress bar (changes color based on time)
+1. Double-click `run_app.bat` in the project root, **or**  
+2. Open a terminal in the project root and run:
+   ```
+   run_app.bat
+   ```
 
--> 🎶 Background music that loops during the quiz
+> **Note:** The batch file assumes Java and JavaFX are properly set up and referenced.
 
--> ⏸️ Pause menu triggered by ESC or pause button (bottom-right)
+---
 
--> GIF background (pause.gif)
+## 💡 Features
 
--> Themed buttons to Resume, Restart, or Quit
+- 🧠 10-question quiz with randomized selection
+- ⏱️ Countdown timer with animated progress bar
+- 🎶 Background music that loops during the quiz
+- ⏸️ Pause menu (ESC or pause button)
+- GIF background (pause.gif)
+- Themed buttons: Resume, Restart, Quit
+- ✅ Correct/incorrect answer highlighting
+- 🎨 Themed UI with custom fonts and effects
+- 📜 Responsive question layout
 
--> ✅ Correct answer highlights in green, incorrect in red — with styled button transitions
+---
 
--> 🎨 Beautiful UI with themed fonts, outlines, and background effects
+## 🌐 Online Mode
 
--> 📜 Question layout adapts responsively for long text
+- Connects to a server on port `12345`
+- Sends a `CONNECT` command
+- Submits score, time, and correct answers to the server
+- Receives leaderboard rankings
 
+---
 
+## ✅ Requirements
 
-
-
-✅ Requirements
-
-1. Java 21 (Preferably OpenJDK 23 or higher)
-
-2. JavaFX 21 SDK (added in lib folder)
-
+1. Java 21+ (OpenJDK recommended)
+2. JavaFX 21 SDK (JARs in `lib/`)
 3. VSCode with Java Extension Pack
 
+---
 
+## ✍️ Customization
 
-✍️ Customization Tips
+- Add questions to `src/main/resources/txt/`
+- Replace background music in `audio/`
+- Update GIFs/images in their respective folders
 
-Add your own questions to the txt files, make sure you follow the format of the quiz
+---
 
-Change the background music by replacing the .m4a file in audio/
+## 📬 Feedback
 
-Update GIFs or images in the respective folders for a different theme.
+Have suggestions or want to fork this for another theme?  
+Send feedback or bug reports [here](https://docs.google.com/forms/d/e/1FAIpQLScuwZ5qb5oEPw5Cla8N2WJ3LoLqTyW3o6K9kJdIoWH_GzzztA/viewform).
 
+---
 
+## ⚖️ Legal
 
-📬 Feedback
+This project uses [JavaFX](https://openjfx.io/), which is licensed under the [GNU General Public License, version 2, with the Classpath Exception](https://openjdk.org/legal/gplv2+ce.html).  
+All Five Nights at Freddy's references and assets are for educational/fan use only. This project is not affiliated with or endorsed by Scott Cawthon or the official FNaF franchise.
 
-Have suggestions, or want to fork this for another theme? Go ahead and remix it! Freddy’s always watching 👀Send us feedback on this Google form below: (especially if you want to report any bugs)
-
-https://docs.google.com/forms/d/e/1FAIpQLScuwZ5qb5oEPw5Cla8N2WJ3LoLqTyW3o6K9kJdIoWH_GzzztA/viewform
-
-
-
+---
 
 Made with 💀, 🎃, and JavaFX.

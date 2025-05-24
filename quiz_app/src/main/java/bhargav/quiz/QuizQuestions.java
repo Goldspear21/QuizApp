@@ -63,7 +63,33 @@ class QuizQuestions {
      * @throws IOException If there is an error while reading the file.
      */
     public void load(String filename) throws IOException {
-        Scanner scanner = new Scanner(new File(filename));
+        // This method remains for compatibility if you ever need to load from a direct file path.
+        // It will still require the file to be present on the file system.
+        try (Scanner scanner = new Scanner(new File(filename))) {
+            loadFromScanner(scanner);
+        }
+    }
+
+    /**
+     * Reads quiz questions from an InputStream.
+     * This method is suitable for loading resources from within a JAR file.
+     * The input stream content should follow the same format as the file:
+     * 1. The question text (one line)
+     * 2. The possible answers (one line, separated by commas)
+     * 3. The correct answer (one line)
+     *
+     * @param inputStream The InputStream to read questions from.
+     * @throws IOException If there is an error while reading the stream.
+     */
+    public void load(InputStream inputStream) throws IOException {
+        // Use InputStreamReader to correctly handle character encoding from the stream
+        try (Scanner scanner = new Scanner(new InputStreamReader(inputStream))) {
+            loadFromScanner(scanner);
+        }
+    }
+
+    // Helper method to consolidate the scanning logic
+    private void loadFromScanner(Scanner scanner) {
         while (scanner.hasNextLine()) {
             String question = scanner.nextLine().trim();
             if (question.isEmpty()) continue;
@@ -80,6 +106,5 @@ class QuizQuestions {
                 allQuestions.add(new MCQQuestion(question, answers, correctAnswer));
             }
         }
-        scanner.close();
     }
 }
