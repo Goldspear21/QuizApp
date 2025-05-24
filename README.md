@@ -31,48 +31,35 @@ Welcome to the FNaF Quiz App, an interactive, animated quiz application inspired
 ### Project Structure
 
 ```
-📁 Project Structure:
-├── .vscode/                # VSCode config files
-├── lib/                    # JavaFX JAR libraries
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── bhargav/
-│   │   │       ├── App.java       # Entry point
-│   │   │       ├── client/        # Client networking code
-│   │   │       └── quiz/          # Main quiz logic and GUI
-│   │   └── resources/
-│   │       ├── audio/             # Background music files
-│   │       ├── gifs/              # Animated GIFs
-│   │       ├── images/            # UI images
-│   │       ├── txt/               # Quiz questions and leaderboard text files
-│   │       └── videos/            # Optional video files
-│   └── test/
-│       └── java/
-│           └── bhargav/
-│               └── TestQuiz.java  # Unit tests
-├── target/
-│   └── quiz_app-1.0-SNAPSHOT.jar  # Built JAR (if using Maven)
-├── run_app.bat                    # Windows batch file to run the app
-├── pom.xml                        # Maven build file
-├── UML.png                        # UML diagram
-└── README.txt                     # This file
+📁 quiz_app_package/
+├── app/
+│   ├── run_app.bat                  # Batch file to run the quiz app
+│   └── target/
+│       ├── quiz_app-1.0-SNAPSHOT.jar
+│       ├── original-quiz_app-1.0-SNAPSHOT.jar
+│       └── classes/
+│           └── ...                  # Compiled classes and resources
+├── server/
+│   ├── run_server.bat               # Batch file to run the server
+│   └── target/
+│       ├── server_app-1.0-SNAPSHOT.jar
+│       ├── original-server_app-1.0-SNAPSHOT.jar
+│       └── classes/
+│           └── ...                  # Compiled server classes
+├── javafx-sdk-23.0.2/               # JavaFX SDK (Windows)
+│   ├── lib/
+│   ├── bin/
+│   └── ...                          # SDK files and legal docs
+├── README.txt                       # This file
 ```
 
 ---
 
 ## 🏃 How to Run
 
-You can run the application in two ways:
+You can run the application in one way
 
-### 1. Using Visual Studio Code
-
-1. Open the project folder in VS Code (`File > Open Folder...`).
-2. Ensure your JavaFX JARs are in the `lib/` directory.
-3. Open `src/main/java/bhargav/App.java`.
-4. Right-click `App.java` and select **Run Java** (or use the Run button / `Ctrl+F5`).
-
-### 2. Using the Provided Batch File (Windows)
+### Using the Provided Batch File (Windows)
 
 1. Double-click `run_app.bat` in the project root, **or**  
 2. Open a terminal in the project root and run:
@@ -137,4 +124,4 @@ All Five Nights at Freddy's references and assets are for educational/fan use on
 
 ---
 
-Made with 💀, 🎃, and JavaFX.
+Made with 💀, 🎃, and JavaFX and way too much coffee ☕.
