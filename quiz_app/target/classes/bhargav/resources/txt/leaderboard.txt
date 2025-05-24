@@ -1,2 +1,1 @@
-dedede - Score: 570 - Correct: 6 - Time: 30s
 Bhargav - Score: 371 - Correct: 4 - Time: 29s
