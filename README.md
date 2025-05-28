@@ -14,6 +14,60 @@
 ![screenshot4](https://res.cloudinary.com/dfio7wdjh/image/upload/v1747044086/Screenshot_2025-05-12_140039_hwr2vb.png)  
 ![screenshot5](https://res.cloudinary.com/dfio7wdjh/image/upload/v1747044085/Screenshot_2025-05-12_140051_fftdqn.png)  
 
+```
+
+                                                          @@@@@@@@@                                 
+                                                          @@#@@@@@@@@@                              
+                                                         @@@@@@@@@@@@@@                             
+                                                         @@%@@@@@@@@@@@                             
+                                    *: ..==*         @@@@@@@@@@@@@@@@@                              
+                                   %=:    ..-%      @@@@@@%@@@@@@@@@@                               
+                                  %=+       .=  %*::#@@@@@@@@@@@@@@@                                
+                                  %-:      =. %#=.  -*#@@@@@@@@@@@@@@@                              
+                                  %::.    =-.%%+::-:.. .-=%@@@@@@@@@@@                              
+                                    @=-++.#@@%####=       .    .:.-#=                               
+                                          @@%+**#%%=.               --.                             
+                                          @@#+###+-=@@.              -+:                            
+                                         @%%#=+#@@@@%.      @@@@%:  .:+*-                           
+                                        @%%%##%@@@@@@@%.    :-=**##: :=#%%                          
+                                        @%##*+%@@@@@@@@-.-@@@@@@@%:::=%  #                          
+                                        @#*%#++%@@@@@@= -@@@@@@@@@ :+%@@                            
+                                        @%%##%%****%@@@@@@@@@@@@@#.-=%@ .%                          
+                                        @%#%%+       +@@*@##%@@@::=:=%@**+                          
+                                        %@%@#                 .+=-:-#%@%%                           
+                                       #%%@@%. ..              .***#@@                              
+                                      @##@@@@%**+.   -*--:     :#%%%%                               
+                                      @##%@@@@@@@*+#@@- .    . %%@%                                 
+                                      @%##@@@@@@@@@@@@@%#%*++#: .*#                                 
+                                   %+++%##%@@@@@@@@@@@@@@@@@@#- -%% %%                              
+                            %*===*####%@#+%#@@@@@@@@@@@@@@@@+  =%++=-=+++#                          
+                            *-.=+#@%##%%*=-*#@@@@@@@@@@@@@@%:.=+  =%+=-..=%                         
+                          @#=-..-*@%##%%%#- .:@@@@@@@@@@@@+---+  .:*+  .-#%%                        
+                         @%*++=*==%%##%%%%%%: :. :%@%@@#=*+-==:.  :=:. .--+%%                       
+                       @#%#+=+-::-%#+#++##%@@@@+:::...    -=   :::-=:.   .:+%%                      
+                      %*%#++=. . .%*:= :    :=##%@@@@@@@@#=     .-+-       .=%@                     
+                     @%%%%#*-..  --      .-=     @@  :.          -#*- .=. ..-@@%                    
+                    @%@@@#+==-+%%+   ....+%#=.   .%*            %%%@%*-===::-#%%@@                  
+                    : @@@%####%@#+-..::.:::#=-.              #%##**=+: -:.+-+#%  @                  
+                      %@@%####%%+=.   ++-=+=::::           .@@%%%%%*++=-:.:.-%@ @@                  
+                    +  %#+%@@@@%%:  :==-..::-=+*.     :   @@@%%@#+-=##-.....-#% @@=                 
+                     @#-:-*@@@%#*===-.  :  -*-##. :+.    @@@@%%%*+: .--.  :-*@@  @                  
+                   @#:  *@@@@@%%#+-:**-=@..=--##=.=    .%@@@%%%==**-::-: .=+*#=% +                  
+                  %+-  #@@@@@@%##==#- :@@+-++#+.      *%%%@%###::  -:  ..-+%%::-*@                  
+        =----=+**%@@@:.@@@@@@@%#+--:  @--:=+*%+-     *%%%%@%++--.   .  :==*%:...:=%                 
+       %:    :==-:=#@@@%@@@@@@%#*%@@@@*  .:=%**%%@@@@@@@@@@%%#@@@#    .++#%: %%-. :# :-*=::         
+@#:@@@@%-*%@@%*=. .=%%@@@@@@@@@@@@@@@@@@@==#%+=:..%@@@@@@@@%% .* -@@-.-=*%+.  ++   -:.-%%+=+   ++:. 
+@-@@@@@@%%%@@@%*-+=.=+%@@@@@@@@@%*@@@@%%@@#*+--:.=@@@@@@@@@@@ @*   @@#+*%%=:.      -=**#@%*=.    . -
+@#@@@@@#=-##-=#-.++  :%@@  @%*=  . .:: +=++*%#:..+%%@@@@%%@%@#%%%###***%@@@*-.. %%###*#@@@@=:  :.:.=
+ %@@@@@+:+#-.*+:.-+ *%@ %=-=+**=-=..:-++++++#%++*%@@@@%%#@%@@%%###*#%%%@@@@@@*%@@%#=+*#%#*=:  ::::+%
+  @@@@@%#%#:*#+-.-#*@@@+     .*%=    .:@+-.:   +@@@@=  :::=@%+  .:-*@%+=:  :#@@@@#%+*+=-::..:=+++*% 
+      @@@@%#%%#=.-*@@@%-...   *#=:..   =%##.    - @*-+:. .:@*.     .*%#-    :+ @@@@%*+*++++*#%%%%   
+        @@@@@@@%#%@@@@%-::.  :%%=::-.  +@%=...  =@@*----:::@=..     *@@#:   .+    @@@@@@@@@@        
+               @@@@  @%+==:.-=#%+=*=   +@%===-  : @%++==++*@*=-.   :%@%#=...-*                      
+```
+
+
+               
 🎮 FNaF-Themed JavaFX Quiz App
 
 Welcome to the FNaF Quiz App, an interactive, animated quiz application inspired by Five Nights at Freddy's. Built with JavaFX, this project features a rich UI, music, GIFs, and a themed pause menu for a polished, spooky quiz experience!
@@ -31,41 +85,59 @@ Welcome to the FNaF Quiz App, an interactive, animated quiz application inspired
 ### Project Structure
 
 ```
-📁 quiz_app_package/
-├── app/
-│   ├── run_app.bat                  # Batch file to run the quiz app
-│   └── target/
-│       ├── quiz_app-1.0-SNAPSHOT.jar
-│       ├── original-quiz_app-1.0-SNAPSHOT.jar
-│       └── classes/
-│           └── ...                  # Compiled classes and resources
-├── server/
-│   ├── run_server.bat               # Batch file to run the server
-│   └── target/
-│       ├── server_app-1.0-SNAPSHOT.jar
-│       ├── original-server_app-1.0-SNAPSHOT.jar
-│       └── classes/
-│           └── ...                  # Compiled server classes
-├── javafx-sdk-23.0.2/               # JavaFX SDK (Windows)
-│   ├── lib/
-│   ├── bin/
-│   └── ...                          # SDK files and legal docs
-├── README.txt                       # This file
+📁 Project Structure:
+├── .vscode/                # VSCode config files
+├── lib/                    # JavaFX JAR libraries
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── bhargav/
+│   │   │       ├── App.java       # Entry point
+│   │   │       ├── client/        # Client networking code
+│   │   │       └── quiz/          # Main quiz logic and GUI
+│   │   └── resources/
+│   │       ├── audio/             # Background music files
+│   │       ├── gifs/              # Animated GIFs
+│   │       ├── images/            # UI images
+│   │       ├── txt/               # Quiz questions and leaderboard text files
+│   │       └── videos/            # Optional video files
+│   └── test/
+│       └── java/
+│           └── bhargav/
+│               └── TestQuiz.java  # Unit tests
+├── target/
+│   └── quiz_app-1.0-SNAPSHOT.jar  # Built JAR (if using Maven)
+├── run_app.bat                    # Windows batch file to run the app
+├── pom.xml                        # Maven build file
+├── UML.png                        # UML diagram
+├── quiz_app.exe                   # Windows executable file
+└── README.txt                     # This file
 ```
 
 ---
 
 ## 🏃 How to Run
 
-You can run the application in one way
+You can run the application in two ways:
 
-### Using the Provided Batch File (Windows)
+### 1. Using Visual Studio Code
+
+1. Open the project folder in VS Code (`File > Open Folder...`).
+2. Ensure your JavaFX JARs are in the `lib/` directory.
+3. Open `src/main/java/bhargav/App.java`.
+4. Right-click `App.java` and select **Run Java** (or use the Run button / `Ctrl+F5`).
+
+### 2. Using the Provided Batch File (Windows)
 
 1. Double-click `run_app.bat` in the project root, **or**  
 2. Open a terminal in the project root and run:
    ```
    run_app.bat
    ```
+
+### 3. Using the provided executable file (Windows)
+
+1. Double-click the 'quiz_app.exe' file in the project root
 
 > **Note:** The batch file assumes Java and JavaFX are properly set up and referenced.
 
@@ -124,4 +196,4 @@ All Five Nights at Freddy's references and assets are for educational/fan use on
 
 ---
 
-Made with 💀, 🎃, and JavaFX and way too much coffee ☕.
+Made with 💀, 🎃, and JavaFX.
