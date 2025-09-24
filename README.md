@@ -196,4 +196,4 @@ All Five Nights at Freddy's references and assets are for educational/fan use on
 
 ---
 
-Made with 💀, 🎃, and JavaFX.
+Made with 💀, 🎃, 🐈‍⬛ and JavaFX.
